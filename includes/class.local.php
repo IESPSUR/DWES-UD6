@@ -49,20 +49,20 @@
         }
 
         public function __toString(){
-            echo "<p>Ciudad: " . $this->ciudad . "<br></p>Calle:" .  $this->calle . "<br></p>Plantas: " . $this->numPlantas . "<br></p>Dimensiones: (" . $this->dimensiones . ")<br></p>";
+            return "<p>Ciudad: " . $this->ciudad . "<br></p>Calle:" .  $this->calle . "<br></p>Plantas: " . $this->numPlantas . "<br></p>Dimensiones: (" . $this->dimensiones . ")<br></p>";
         }
 
         public function __clone(){
             $this->dimensiones = clone $this->dimensiones;
         }
     }
-
+    /*
     $dimensiones1 = new Dimensiones(12,10,26);
     $prueba1 = new Local("Sevilla","C/ Buenos Aires, 23",3,$dimensiones1);
     $prueba1->__clone();
     $dimensiones2 = new Dimensiones(14,15,24);
     $prueba2 = new Local("Cádiz","C/ Portugal, 3",6,$dimensiones2);
-
+    */
     
 
 ?>
