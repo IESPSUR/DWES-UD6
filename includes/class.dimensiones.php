@@ -27,7 +27,7 @@ Class Dimensiones{
     }
 
     public function __toString(){
-        echo "alto=" . $this->alto . ",ancho=" . $this->ancho . ",largo=" . $this->largo;
+        return "alto=" . $this->alto . ",ancho=" . $this->ancho . ",largo=" . $this->largo;
     }
 
 

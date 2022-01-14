@@ -16,7 +16,7 @@
         }
         
         public function __toString(){
-            echo "<p>" . "datoslocal" . "Aforo: " . $this->aforoSala . "<br></p>";
+            return "<p>" . "datoslocal" . "Aforo: " . $this->aforoSala . "<br></p>";
 
         }
     } 
