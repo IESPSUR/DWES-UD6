@@ -29,5 +29,9 @@ class Cuatro_ruedas extends Vehiculo{
                 $this->color=$color_nuevo;
         }
 
+        public function añadir_persona($peso_persona){
+            $this->peso+=$peso_persona;
+        }
+
     } 
 ?>

@@ -29,5 +29,9 @@ class Dos_ruedas extends Vehiculo{
             $this->peso+=($litros_gasolina*1.5);
         }
 
+        public function añadir_persona($peso_persona)
+        {
+            $this->peso+=$peso_persona+1.5;
+        }
     } 
 ?>
