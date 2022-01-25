@@ -7,5 +7,8 @@ require './models/libros_model.php';
 //La vista recibe un array para mostrarlo por pantalla
 $libros= getLibros();
 include './views/libros_listar.php';
+
+
+
 }
 ?>
