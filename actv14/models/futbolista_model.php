@@ -1,9 +1,6 @@
 <?php
 
-$servidor = "localhost";
-$baseDatos = "futbol";
-$usuario = "developer";
-$pass = "developer";
+
 
 function creaConexion (){
     $servidor = "localhost";

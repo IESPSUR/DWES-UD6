@@ -10,6 +10,6 @@
     function mostrarJugador (){
         require 'models/futbolista_model.php';
         $futbolista = obtenerElemento($_GET["id"]);
-        include 'views/futbolista_view.php'; 
+        include 'views/futbolista_view.php';  
     }
 ?>
