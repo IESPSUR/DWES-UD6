@@ -7,7 +7,12 @@
     <table border="1">
         <tr>
             <th>NOMBRE</th>
-            <th>FECHA</th>
+            <th>CLUB</th>
+            <th>NACIONALIDAD</th>
+            <th>NGOLES</th>
+            <th>NPARTIDOS</th>
+            <th>FNACIMIENTO</th>
+            <th>FOTO</th>
         </tr>
         <?php foreach ($datos as $valor) : ?>
 
@@ -18,7 +23,7 @@
                 <td><?php echo $valor['ngoles']; ?></td>
                 <td><?php echo $valor['npartidos']; ?></td>
                 <td><?php echo $valor['fnacimiento']; ?></td>
-                <td><?php echo $valor['foto']; ?></td>
+                <td><?php echo $valor['foto'];?></td>
             </tr>
             
         <?php endforeach; ?>

@@ -5,10 +5,21 @@ $baseDatos = "futbol";
 $usuario = "developer";
 $pass = "developer";
 
+function creaConexion (){
+    $servidor = "localhost";
+    $baseDatos="futbol";
+    $usuario= "developer";
+    $pass="developer";
+    
+    $conexion = new PDO("mysql:host=$servidor;dbname=$baseDatos",$usuario,$pass);
+       return $conexion;
+}
+
+
 function obtenerElemento($id){       
     try {
-        $conexion = new PDO("mysql:host=".$GLOBALS["servidor"].";dbname=".$GLOBALS["baseDatos"],$GLOBALS["usuario"],$GLOBALS["pass"]);        $consulta= "SELECT * FROM futbolistas WHERE id=?";
-        $consulta=$conexion->prepare($consulta);
+        $conexion = creaConexion();
+        $consulta=$conexion->prepare("SELECT * FROM futbolistas WHERE id=?");
         $consulta->bindParam(1,$id);
         $consulta->execute();
         $result = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -58,7 +69,7 @@ function editarElemento($id,$nombre, $club, $nacionalidad, $ngoles, $npartidos, 
 function obtenerTodos(){
     try {
         $array = [];
-        $conexion = new PDO("mysql:host=".$GLOBALS["servidor"].";dbname=".$GLOBALS["baseDatos"],$GLOBALS["usuario"],$GLOBALS["pass"]);
+        $conexion = creaConexion();
         $consulta = $conexion->prepare("SELECT * FROM futbolistas");
         $consulta->execute();
         while($futbolista = $consulta->fetch(PDO::FETCH_ASSOC)){

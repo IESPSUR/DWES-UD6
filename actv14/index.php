@@ -1,9 +1,8 @@
 <?php 
-    //require 'controllers/libros_controller.php';
-
     define('CONTROLLERS_FOLDER',"controllers/");
-    define('DEFAULT_CONTROLLER',"libros");
-    define('DEFAULT_ACTION',"listar");
+    define('DEFAULT_CONTROLLER',"futbolista");
+    define('DEFAULT_ACTION',"mostrarFutbolistas");
+    //define('DEFAULT_ACTION',"mostrarJugador");
 
     $controller = DEFAULT_CONTROLLER;
 
