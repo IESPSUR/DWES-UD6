@@ -49,8 +49,8 @@
                 echo "<td>", $jugador['fnacimiento'],"</td> ";
                 $id=$jugador['id'];
                 echo "<td><a href='index.php?controller=futbolista&action=mostrarJugador&id=$id'>DETALLE</td>";
-                echo "<td><a href='futbolista_edit.php?id=$id'>EDITAR</td>";
-                echo "<td><a href='futbolista_delete.php?id=$id'>BORRAR</td>";
+                echo "<td><a href='index.php?controller=futbolista&action=editarJugador&id=$id'>EDITAR</td>";
+                echo "<td><a href='index.php?controller=futbolista&action=borrarJugador&id=$id'>BORRAR</td>";
                 echo "</tr>";
             }
             

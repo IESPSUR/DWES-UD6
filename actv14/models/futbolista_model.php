@@ -30,8 +30,8 @@ function obtenerElemento($id){
 
 function eliminaElemento ($id){
     try{
-        $conexion = new PDO("mysql:host=".$GLOBALS["servidor"].";dbname=".$GLOBALS["baseDatos"],$GLOBALS["usuario"],$GLOBALS["pass"]);
-        $consulta =$conexion->prepare("DELETE FROM futbolistas WHERE id=?"); 
+        $conexion = creaConexion();
+        $consulta =$conexion->prepare("DELETE  FROM futbolistas WHERE id=?"); 
         $consulta->bindParam(1,$id);
         return $consulta->execute();
     } catch(PDOException $e){

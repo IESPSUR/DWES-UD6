@@ -12,4 +12,70 @@
         $futbolista = obtenerElemento($_GET["id"]);
         include 'views/futbolista_view.php';  
     }
+
+    function borrarJugador (){
+        require 'models/futbolista_model.php';
+        $futbolista = eliminaElemento($_GET["id"]);
+        include 'views/futbolista_delete.php';  
+    }
+
+    function editarJugador (){
+        require 'models/futbolista_model.php';
+
+        //obtiene el elemento de la url
+    $id = $_GET["id"];
+    $futbolista=(obtenerElemento($id));
+    
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+
+        $nombre=$_POST["nombre"];
+        $club=$_POST["club"];
+        $nacionalidad=$_POST["nacionalidad"];
+        $ngoles=$_POST["ngoles"];
+        $npartidos=$_POST["npartidos"];
+        $fnacimiento=$_POST["fnacimiento"];
+        
+        
+        $nombre=strip_tags($_POST["nombre"]);
+	    $nombre=stripslashes($_POST["nombre"]);
+		$nombre=htmlspecialchars($_POST["nombre"]);
+
+        $club=strip_tags($_POST["club"]);
+	    $club=stripslashes($_POST["club"]);
+		$club=htmlspecialchars($_POST["club"]);
+
+        $nacionalidad=strip_tags($_POST["nacionalidad"]);
+	    $nacionalidad=stripslashes($_POST["nacionalidad"]);
+		$nacionalidad=htmlspecialchars($_POST["nacionalidad"]);
+        
+        
+
+        $target_dir = "images/";
+        $target_file = $target_dir . basename($_FILES["foto"]["name"]);
+        
+
+
+        
+        if($_FILES['foto']['size']!=0){
+            
+            $foto = $_FILES["foto"]["name"];
+
+            if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
+                echo "The file ". htmlspecialchars( basename( $_FILES["foto"]["name"])). " has been uploaded.";
+                editarElemento($_GET["id"], $nombre, $club, $nacionalidad, $ngoles, $npartidos, $fnacimiento,$foto);
+            }
+        }else{
+            $foto=$futbolista['foto'];
+                editarElemento($_GET["id"], $nombre, $club, $nacionalidad, $ngoles, $npartidos, $fnacimiento,$foto); 
+                
+        }
+        $id=$_GET["id"];
+        header("Location: views/futbolista_view.php?id=$id");
+
+        include 'views/futbolista_edit.php';  
+    }
+
+
+    }
 ?>
