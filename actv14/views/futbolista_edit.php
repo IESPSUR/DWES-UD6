@@ -18,7 +18,7 @@
                 <li><a href="import.php">Importar elementos</a></li>
             </ul>
         </nav>
-        <form class="form-register" enctype="multipart/form-data"  method="POST">
+        <form class="form-register" enctype="multipart/form-data"  method="POST" action="index.php?controller=futbolista&action=validarJugador">
             <h2 class="form-titulo">Características:</h2>
             <div class="contenedor-inputs">
                 <input type="hidden" name="id" value="<?php  $id?>"><!--aquí va el id, es hidden por lo tanto no es visible en la web, pero si accesible desde PHP -->

@@ -41,7 +41,7 @@ function eliminaElemento ($id){
 
 function editarElemento($id,$nombre, $club, $nacionalidad, $ngoles, $npartidos, $fnacimiento, $foto){
     try {
-        $conexion = new PDO("mysql:host=".$GLOBALS["servidor"].";dbname=".$GLOBALS["baseDatos"],$GLOBALS["usuario"],$GLOBALS["pass"]);
+        $conexion = creaConexion();
 
         $consulta =$conexion->prepare("UPDATE futbolistas SET nombre=?, club=?, nacionalidad=?, ngoles=?, npartidos=?, fnacimiento=?, foto=? WHERE id=?"); 
         $consulta->bindParam(1,$nombre);

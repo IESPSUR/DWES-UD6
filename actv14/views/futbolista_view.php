@@ -12,12 +12,8 @@
 
     <?php
 
-    //obtiene el elemento de la url
-    $id = $_GET["id"];
-    //meto en $futbolista el array obtenido
-    $datos[]=(obtenerElemento($id));
     //lo recorro para sacarle los datos
-    foreach($datos as $jugador)
+    foreach($futbolista as $jugador)
             {
                 
                 $nombre=$jugador['nombre'];

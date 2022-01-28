@@ -19,16 +19,20 @@
         include 'views/futbolista_delete.php';  
     }
 
-    function editarJugador (){
+    function cargarJugador (){
         require 'models/futbolista_model.php';
+        $id = $_GET["id"];
+        $futbolista=obtenerElemento($id);
+        include 'views/futbolista_edit.php';  
+    }
 
-        //obtiene el elemento de la url
-    $id = $_GET["id"];
-    $futbolista=(obtenerElemento($id));
+
+    function validarJugador (){
+        require 'models/futbolista_model.php';
     
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-
+        $id=$_POST['id'];
         $nombre=$_POST["nombre"];
         $club=$_POST["club"];
         $nacionalidad=$_POST["nacionalidad"];
@@ -70,12 +74,10 @@
                 editarElemento($_GET["id"], $nombre, $club, $nacionalidad, $ngoles, $npartidos, $fnacimiento,$foto); 
                 
         }
-        $id=$_GET["id"];
-        header("Location: views/futbolista_view.php?id=$id");
-
-        include 'views/futbolista_edit.php';  
+        
+        header("Location: index.php?controller=futbolista&action=mostrarJugador&id=$id");
+        
     }
-
-
+    include 'views/futbolista_edit.php';
     }
 ?>
