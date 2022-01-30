@@ -11,21 +11,14 @@
     <body>
 
     <?php
-
-    //lo recorro para sacarle los datos
-    foreach($futbolista as $jugador)
-            {
-                
-                $nombre=$jugador['nombre'];
-                $nacionalidad=$jugador['nacionalidad'];
-                $club=$jugador['club'];
-                $ngoles=$jugador['ngoles'];
-                $npartidos=$jugador['npartidos'];
-                $fnacimiento=$jugador['fnacimiento'];
-                $foto=$jugador['foto'];
-                $id=$jugador['id'];
-               
-            }
+                $nombre=$futbolista['nombre'];
+                $nacionalidad=$futbolista['nacionalidad'];
+                $club=$futbolista['club'];
+                $ngoles=$futbolista['ngoles'];
+                $npartidos=$futbolista['npartidos'];
+                $fnacimiento=$futbolista['fnacimiento'];
+                $foto=$futbolista['foto'];
+                $id=$futbolista['id'];
 
     ?>
 
@@ -34,9 +27,8 @@
         <nav>
             <ul>
                 <li><a href="index.php">Página principal</a></li>
-                <li><a href="futbolista_create.php">Nuevo elemento</a></li>
-                <li><a class="active" href="futbolista_list.php">Lista elementos</a></li>
-                <li><a href="futbolista_import.php">Importar elementos</a></li>
+                <li><a href="index.php?controller=futbolista&action=cargarJugador">Nuevo elemento</a></li>
+                <li><a class="active" href='index.php'>Lista elementos</a></li>
             </ul>
         </nav>  
 
@@ -45,7 +37,7 @@
                 <div class="bio">
                     <img src="images/<?php echo $foto?>" alt="background" class="bg"><!--aquí va el link a la imagen-->
                     <div>
-                        <h3><?php echo $nombre?></h3><!--aquí va el valor del texto 1-->
+                        <h3><?php echo $nombre;?></h3><!--aquí va el valor del texto 1-->
                         <p><?php echo $club?></p><!-- aquí va el valor del texto 2--> 
                         <p><?php echo $nacionalidad?></p><!-- aquí va el valor del texto 3-->
                     </div>

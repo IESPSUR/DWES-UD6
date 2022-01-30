@@ -19,9 +19,9 @@ function obtenerElemento($id){
         $consulta=$conexion->prepare("SELECT * FROM futbolistas WHERE id=?");
         $consulta->bindParam(1,$id);
         $consulta->execute();
-        $result = $consulta->fetch(PDO::FETCH_ASSOC);
+        $result = $consulta->fetch();
         $conexion = null;
-        return ($result);     
+        return $result;     
     } catch (PDOException $e) {
         echo "Conexión fallida: " . $e->getMessage();
     } 
@@ -82,7 +82,7 @@ function obtenerTodos(){
 function insertaElemento($nombre, $club, $nacionalidad, $ngoles, $npartidos, $fnacimiento, $foto){
     
     try {
-        $conexion = new PDO("mysql:host=".$GLOBALS["servidor"].";dbname=".$GLOBALS["baseDatos"],$GLOBALS["usuario"],$GLOBALS["pass"]);
+        $conexion = creaConexion();
 
         $consulta =$conexion->prepare("INSERT INTO futbolistas (nombre, club, nacionalidad, ngoles, npartidos, fnacimiento, foto) VALUES (?,?,?,?,?,?,?)"); 
         $consulta->bindParam(1,$nombre);

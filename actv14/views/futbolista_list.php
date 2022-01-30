@@ -13,9 +13,8 @@
     <nav>
         <ul>
             <li><a href="index.php">Página principal</a></li>
-            <li><a href="create.php">Nuevo elemento</a></li>
-            <li><a class="active" href="list.php">Lista elementos</a></li>
-            <li><a href="import.php">Importar elementos</a></li>
+            <li><a href="index.php?controller=futbolista&action=cargarJugador">Nuevo elemento</a></li>
+            <li><a class="active" href="index.php">Lista elementos</a></li>
         </ul>
     </nav>
     <table class="styled-table">
@@ -32,13 +31,6 @@
         </thead>
         <tbody>
            <?php
-            
-            $todos[]=obtenerTodos();
-            $longitud = count($todos);
-            
-            
-
-            foreach($todos as $futbolista){
                 
             foreach($datos as $jugador)
             {
@@ -52,8 +44,6 @@
                 echo "<td><a href='index.php?controller=futbolista&action=cargarJugador&id=$id'>EDITAR</td>";
                 echo "<td><a href='index.php?controller=futbolista&action=borrarJugador&id=$id'>BORRAR</td>";
                 echo "</tr>";
-            }
-            
             }
 
            ?>
