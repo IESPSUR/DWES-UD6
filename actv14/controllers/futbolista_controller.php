@@ -1,22 +1,30 @@
 <?php 
     //http://localhost/php/DWES-UD6/actv14/index.php?controller=futbolista&action=mostrarJugador
     //http://localhost/php/DWES-UD6/actv14/futbolista_view.php?id=1
+    session_start();
+    if($_SESSION["perfil"]!="admin"){
+        header("Location: index.php?controller=usuario&action=validaLogin");
+    }
+    
+    
     function mostrarFutbolistas(){
         require 'models/futbolista_model.php';
-        $datos = obtenerTodos();
-        include 'views/futbolista_list.php'; 
+            $datos = obtenerTodos();
+            include 'views/futbolista_list.php';
+           
     }
 
     function mostrarJugador (){
         require 'models/futbolista_model.php';
+       
         $futbolista = obtenerElemento($_GET["id"]);
-        include 'views/futbolista_view.php';  
+        include 'views/futbolista_view.php'; 
     }
 
     function borrarJugador (){
         require 'models/futbolista_model.php';
         $futbolista = eliminaElemento($_GET["id"]);
-        include 'views/futbolista_delete.php';  
+        include 'views/futbolista_delete.php';
     }
 
     function cargarJugador (){
@@ -36,12 +44,11 @@
         }
 
         include 'views/futbolista_form.php';  
-    }
+}
 
 
     function validarJugador (){
         require 'models/futbolista_model.php';
-
         if (!empty($_POST['id'])){
             $id=$_POST['id'];
         }
@@ -163,14 +170,8 @@
                     insertaElemento($nombre, $club, $nacionalidad, $ngoles, $npartidos, $fnacimiento,$imagen);
                     header("Location: index.php?controller=futbolista&action=mostrarFutbolistas");
                 }
-                 
-        
-        
-        
-    }
-    
-    
-
+                
+}
 
     
 ?>

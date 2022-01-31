@@ -49,5 +49,7 @@
            ?>
         </tbody>
     </table>
+    <form action="index.php?controller=usuario&action=cerrarSesion"><input type="submit" value="Cerrar Sesión" /></form>
+    
 </body>
 </html>

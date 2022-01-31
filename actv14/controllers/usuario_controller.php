@@ -4,7 +4,7 @@ function validaLogin(){
 
     session_start();
     //session_destroy();
-    var_dump($_SESSION["perfil"]);
+    
     if($_SESSION["perfil"]=="admin"){
     header("Location: index.php?controller=futbolista&action=mostrarFutbolistas");
     }
@@ -48,6 +48,12 @@ function validaLogin(){
     
         
     }
+
     include 'views/usuario_loginview.php';
+}
+
+function cerrarSesion(){
+    session_start();
+    session_destroy();
 }
 ?>
