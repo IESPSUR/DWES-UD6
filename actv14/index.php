@@ -1,7 +1,7 @@
 <?php 
     define('CONTROLLERS_FOLDER',"controllers/");
-    define('DEFAULT_CONTROLLER',"futbolista");
-    define('DEFAULT_ACTION',"mostrarFutbolistas");
+    define('DEFAULT_CONTROLLER',"usuario");
+    define('DEFAULT_ACTION',"validaLogin");
     //define('DEFAULT_ACTION',"mostrarJugador");
 
     $controller = DEFAULT_CONTROLLER;
