@@ -15,6 +15,7 @@
             <li><a href="index.php">Página principal</a></li>
             <li><a href="index.php?controller=futbolista&action=cargarJugador">Nuevo elemento</a></li>
             <li><a class="active" href="index.php">Lista elementos</a></li>
+            <li><a href="index.php?controller=usuario&action=cerrarSesion">Cerrar Sesión</a></li>
         </ul>
     </nav>
     <table class="styled-table">
@@ -49,7 +50,6 @@
            ?>
         </tbody>
     </table>
-    <form action="index.php?controller=usuario&action=cerrarSesion"><input type="submit" value="Cerrar Sesión" /></form>
     
 </body>
 </html>
